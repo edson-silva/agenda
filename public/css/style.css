@@ -1,0 +1,11 @@
+.btn-add-tarefa{
+    background: green; 
+    color:#fff; 
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.margin-bottom-50{
+    margin-bottom: 50px;
+}
