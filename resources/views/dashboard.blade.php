@@ -14,7 +14,7 @@
                 <div class="p-6 bg-white border-b border-gray-200">
 
                     <div class="margin-bottom-50">
-                        <a href="" class='btn-add-tarefa'>Adicionar nova tarefa</a>
+                        <a href="{{url('admin/agenda/nova-tarefa')}}" class='btn-add-tarefa'>Adicionar nova tarefa</a>
                     </div>
                    
                     <div class="calendar"></div>

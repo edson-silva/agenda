@@ -9,3 +9,17 @@
 .margin-bottom-50{
     margin-bottom: 50px;
 }
+
+.formulario-agenda{
+    width: 50%;
+    margin: 0 auto;
+}
+
+.formulario-agenda input[type='text'],
+.formulario-agenda input[type='datetime-local'],
+.formulario-agenda select
+{
+    width: 100%;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+}
