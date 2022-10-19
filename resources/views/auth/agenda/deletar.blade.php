@@ -4,7 +4,7 @@
 
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dashboard') }}
+            Deletar Tarefa
         </h2>
     </x-slot>
 
@@ -13,17 +13,12 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
 
-                    <div class='dash-buttons margin-bottom-50'>
-                        <div>
-                            <a href="{{url('admin/agenda/nova-tarefa')}}" class='btn-add-tarefa'>Adicionar nova tarefa</a>
-                        </div>
-
-                        <div class='margin-left-20'>
-                            <a href="{{url('admin/agenda/historico')}}" class='btn-historico-tarefa'>Histórico</a>
-                        </div>
-                    </div>
-                   
-                    <div class="calendar"></div>
+                    <form name='formDeletar' id='formDeletar' method='post' action="{{url('admin/agenda/eventos/deletar/'.$id)}}">
+                        Deseja mesmo deletar essa tarefa? <br>
+                        @csrf
+                        <input type="hidden" name='id' id='id' value="{{$id}}">
+                        <input class="btn-add-tarefa" style="cursor:pointer;" type="submit" value='Deletar'>
+                    </form>
 
                 </div>
             </div>

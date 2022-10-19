@@ -6,8 +6,20 @@
     font-weight: bold;
 }
 
+.btn-historico-tarefa{
+    background: darkblue; 
+    color:#fff; 
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
 .margin-bottom-50{
     margin-bottom: 50px;
+}
+
+.margin-left-20{
+    margin-left: 20px;
 }
 
 .formulario-agenda{
@@ -22,4 +34,41 @@
     width: 100%;
     margin: 10px 0;
     border: 1px solid #ccc;
+}
+
+.dash-buttons{
+    display:flex;
+    flex-direction: row;
+}
+
+.historico{
+    display:grid;
+    grid-template-columns: repeat(2,46%);
+    justify-content: space-between;
+}
+.historico-title-abertos{
+    background: darkblue; 
+    color:#fff; 
+    padding: 5px 10px;    
+    font-weight: bold;
+    text-align: center;
+}
+
+.historico-title-finalizados{
+    background: green; 
+    color:#fff; 
+    padding: 5px 10px;    
+    font-weight: bold;
+    text-align: center;
+}
+
+.historico table{
+    width: 100%;
+    text-align: center;
+}
+.historico table thead tr{
+    background: #ccc;
+}
+.historico table thead th:nth-child(1){
+    width: 40%;
 }

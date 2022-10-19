@@ -40,6 +40,7 @@ class AgendaController extends Controller
             $endDate = explode(' ',$evento->end); $endDate = $endDate[0].'T'.$endDate[1];    
             $dotColor = ($evento->status == 'Finalizado')?'green':'blue';                
             $arr[$i]=[
+                'id'=>$evento->id,
                 'title'=>$evento->title,
                 'start'=>$startDate,
                 'end'=>$endDate,
@@ -55,48 +56,27 @@ class AgendaController extends Controller
 
 
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Agenda  $agenda
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Agenda $agenda)
+    #Página de confirmação de deletar evento
+    public function deletar(Request $request)
     {
-        //
+        $id = $request->id;
+        return view('auth.agenda.deletar',compact('id'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Agenda  $agenda
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Agenda $agenda)
+
+    #Deleta o evento
+    public function destroy(Request $request)
     {
-        //
+        $id = $request->id;
+        Agenda::where('id','=',$id)->delete();
+        return redirect('/dashboard');
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Agenda  $agenda
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Agenda $agenda)
-    {
-        //
-    }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Agenda  $agenda
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Agenda $agenda)
+    #Exibe a página de histórico de tarefas
+    public function historico(Request $request)
     {
-        //
+        $eventos = Agenda::orderBy('start','desc')->get();
+        return view('auth.agenda.historico',compact('eventos'));
     }
 }

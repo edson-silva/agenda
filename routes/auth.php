@@ -57,4 +57,7 @@ Route::middleware('auth')->group(function () {
     Route::get('admin/agenda/nova-tarefa',[AgendaController::class,'create'])->name('admin.novatarefa');
     Route::post('admin/agenda/nova-tarefa/store',[AgendaController::class,'store'])->name('admin.novatarefa.store');
     Route::get('admin/agenda/eventos',[AgendaController::class,'getEvents'])->name('admin.eventos');
+    Route::get('admin/agenda/eventos/deletar/{id}',[AgendaController::class,'deletar'])->name('admin.eventos.deletar');
+    Route::post('admin/agenda/eventos/deletar/{id}',[AgendaController::class,'destroy'])->name('admin.eventos.destroy');
+    Route::get('admin/agenda/historico',[AgendaController::class,'historico'])->name('admin.eventos.historico');
 });
